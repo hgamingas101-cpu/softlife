@@ -643,3 +643,78 @@ body.remoto-activo #bridgeSuccessArea {
         padding: 4px;
     }
 }
+/* ==========================================================================
+   SECCIÓN NUEVA: MANUAL DE USUARIO INTERACTIVO
+   ========================================================================== */
+.manual-interactivo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1.5rem;
+}
+
+.btn-manual-primario {
+    padding: 0.8rem 2rem;
+    background: var(--primary-electric);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(26, 92, 255, 0.15);
+}
+
+.btn-manual-primario:hover {
+    background: #0040e6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(26, 92, 255, 0.25);
+}
+
+/* Caja contenedora del QR */
+.manual-qr-box {
+    text-align: center;
+    background: var(--bg-dark);
+    padding: 1.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.qr-wrapper {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.manual-qr-img {
+    display: block;
+    width: 180px;
+    height: 180px;
+}
+
+.qr-hint {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0.8rem 0;
+    font-weight: 500;
+}
+
+.enlace-directo-word {
+    display: inline-block;
+    color: var(--primary-electric);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.enlace-directo-word:hover {
+    color: #0040e6;
+    text-decoration: underline;
+}

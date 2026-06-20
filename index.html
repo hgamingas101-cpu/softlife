@@ -34,82 +34,49 @@
 
         <section class="hero">
             <div class="hero-logo-container">
-                <img src="assets/logo.png" alt="Soft-Life Logo" class="hero-logo-img">
+                <img src="assets/Soft-Life.png" alt="Soft-Life Logo" class="hero-logo-img">
             </div>
             <p>Automatización real para la vida de tus sistemas</p>
         </section>
 
-        <main class="container">
-            <section class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-value">0%</div>
-                    <div class="metric-label">Hojas de vida perdidas</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">98%</div>
-                    <div class="metric-label">Mantenimientos al día</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-status">
-                        <span class="status-dot"></span>
-                        <span class="metric-value">API</span>
-                    </div>
-                    <div class="metric-label">Puente móvil conectado</div>
-                </div>
-            </section>
+      
 
             <section id="proyecto" class="card">
                 <h2>Sobre el Software</h2>
-                <p><strong>Soft-Life</strong> es una solución robusta diseñada para automatizar y administrar las hojas de vida de los equipos de cómputo en empresas, comercios locales e instituciones educativas...</p>
+                <p><strong>Soft-Life</strong>Es una solución moderna para la organización y gestión de la información de los equipos de computo, por supuesto asegurando la integridad y disponibilidad de los datos que se encuentren en el sistema.</p>
+                <p>Es una herramienta util debido a que facilita el flujo de trabajo ya que basta con algunos pocos clicks para ya realizar bastante trabajo.</p>
             </section>
 
             <section id="luly" class="card luly-section">
-                <h2>🤖 Luly: Tu Instructora de Soporte</h2>
-                <p>Integrada directamente en el ecosistema de <strong>Soft-Life</strong>, Luly actúa como una guía interactiva paso a paso...</p>
+                <h2>🤖 Luly: Tu Chatbot de Soporte</h2>
+                <p>Integrada directamente en el ecosistema de <strong>Soft-Life</strong>, Luly actúa como una guía/asistente virtual qure te ayuda con respecto a información que pueda facilitar o aclarar dudas en tu area de trabajo.</p>
 
-                <div class="luly-display-grid">
-                    <div class="luly-3d-box">
-                        <h3>Módulo Interactivo 3D</h3>
-                        <model-viewer 
-                            src="assets/luly_model.glb" 
-                            alt="Modelo 3D interactivo de Luly IA"
-                            auto-rotate 
-                            camera-controls 
-                            shadow-intensity="1">
-                        </model-viewer>
-                        <p class="luly-3d-hint">🖱️ <em>Arrastra para rotar o usa el scroll.</em></p>
-                    </div>
-
-                    <div class="luly-hd-details">
-                        <div class="detail-block">
-                            <div class="crop-window front-crop">
-                                <img src="assets/luly_sheet.jpeg" alt="Logo Frontal HD" class="sheet-img">
-                            </div>
-                            <div class="detail-text">
-                                <h4>Identificación Frontal</h4>
-                                <p>Isotipo oficial de Soft-Life bordado en alta resolución.</p>
-                            </div>
-                        </div>
-
-                        <div class="detail-block">
-                            <div class="crop-window back-crop">
-                                <img src="assets/luly_sheet.jpeg" alt="Logo Trasero HD" class="sheet-img">
-                            </div>
-                            <div class="detail-text">
-                                <h4>Emblema de Soporte Trasero</h4>
-                                <p>Estampado master de gran formato en la espalda.</p>
-                            </div>
-                        </div>
-
+    
                         <div class="detail-block expressions-block">
-                            <h4>Línea Gráfica de Expresiones</h4>
+                            
                             <div class="crop-window-expressions">
-                                <img src="assets/luly_sheet.jpeg" alt="Expresiones Luly" class="sheet-img">
+                                <img src=""Expresiones Luly" class="sheet-img">
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <section id="manual" class="card">
+            <h2>📘 Manual de Usuario</h2>
+            <p>Accede de forma rápida a la documentación detallada del sistema. Puedes escanear el código QR con tu dispositivo móvil o hacer clic en el botón para abrir el documento de Word directamente.</p>
+            
+            <div class="manual-interactivo-container">
+                <button id="btnMostrarManual" class="btn-manual-primario">🔗 Generar Acceso al Manual</button>
+                
+                <div id="manualQrArea" class="manual-qr-box" style="display: none;">
+                    <div class="qr-wrapper">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://docs.google.com/document/d/1Qz0RmG3Sw0rPH2-IzBggdTC-hDKUTgEh/edit?usp=sharing&ouid=105308408271546181537&rtpof=true&sd=true" alt="QR Manual de Usuario" class="manual-qr-img">
+                    </div>
+                    <p class="qr-hint">Escanea este código para leer el manual en tu móvil</p>
+                    <a href="https://drive.google.com/drive/folders/1tYK1LuGMvOZJEFI1TjTH2kbWieP8nTjv?usp=drive_link" target="_blank" class="enlace-directo-word">Descargar documento Word (.docx)</a>
+                </div>
+            </div>
+        </section>
 
             <section id="tutoriales" class="card">
                 <h2>📹 Modo de Uso</h2>
@@ -117,15 +84,9 @@
                     <div class="video-item">
                         <h3>Registro de Equipos y Salas</h3>
                         <video controls width="100%">
-                            <source src="assets/video_registro.mp4" type="video/mp4">
+                            <source src="assets/salas.mp4" type="video/mp4">
                         </video>
-                    </div>
-                    <div class="video-item">
-                        <h3>Control y Agenda de Mantenimientos</h3>
-                        <video controls width="100%">
-                            <source src="assets/video_mantenimiento.mp4" type="video/mp4">
-                        </video>
-                    </div>
+                    
                 </div>
             </section>
 
