@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         statusMsg.textContent = '';
 
         // Extraemos la IP que viene en la URL del QR (?ip=10.xxx.xxx.xxx)
-        // Si no viene ninguna (alguien entró manual), usamos tu IP por defecto o localhost
         const ipFromUrl = urlParams.get('ip') || '10.232.197.85'; 
         const backendUrl = `http://${ipFromUrl}:5000/api/validate_pin`;
 
@@ -80,21 +79,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify({ pin: pin })
             });
             const data = await resp.json();
-        if (data.status === 'ok') {
+            
+            if (data.status === 'ok') {
+                // Ocultamos el login del PIN
                 formArea.style.display = 'none';
+                
+                // Muestra la zona de streaming superior
                 successArea.style.display = 'block';
+                
+                // 🔥 CLAVE: Activamos la clase en el body para encender el modo inmersivo de CSS
+                document.body.classList.add("remoto-activo");
+
                 statusMsg.className = 'status-msg success';
                 statusMsg.textContent = '✅ ¡Conectado con éxito! Cargando interfaz...';
 
                 const streamUrl = `http://${ipFromUrl}:5000/api/stream`;
                 const container = document.getElementById('screenContainer');
                 
-                // Inyectamos la imagen con un ID para poder escuchar los clics
+                // Inyectamos la imagen limpia (los estilos ahora se controlan desde styles.css)
                 container.innerHTML = `
-                    <img id="pcScreen" src="${streamUrl}" 
-                         alt="Pantalla de la PC" 
-                         style="width: 100%; max-width: 100%; border-radius: 8px; border: 2px solid #2563eb; cursor: crosshair; touch-action: none;"
-                    />
+                    <img id="pcScreen" src="${streamUrl}" alt="Pantalla de la PC" />
                 `;
 
                 const pcScreen = document.getElementById('pcScreen');
@@ -119,8 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         console.error("Error al enviar evento de clic:", err);
                     }
                 });
-            }
-             else {
+            } else {
                 statusMsg.className = 'status-msg error';
                 statusMsg.textContent = `❌ ${data.msg}`;
                 btnConnect.disabled = false;
